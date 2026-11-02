@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jenis Pengawasan · SAKTi</title>
+  <title>Jenis Pengawasan · SEPAKAT</title>
   <link rel="icon" type="image/png" href="assets/img/logoAS.png" />
 
   <!-- Font Awesome -->
@@ -45,21 +45,18 @@
 
     a { color: inherit; text-decoration: none; }
 
-    /* ===== CONTAINER (Navbar & Footer — SAMA DENGAN index.html) ===== */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 32px;
     }
 
-    /* ===== CONTAINER NARROW (Konten Utama) ===== */
     .container-narrow {
       max-width: 1000px;
       margin: 0 auto;
       padding: 0 32px;
     }
 
-    /* ===== ANIMATIONS ===== */
     @keyframes fadeInUp {
       0% { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
@@ -81,7 +78,6 @@
     .animate-delay-2 { animation-delay: 0.3s; }
     .animate-delay-3 { animation-delay: 0.45s; }
 
-    /* ===== NAVBAR (SAMA PERSIS DENGAN index.html) ===== */
     .navbar {
       background: rgba(246, 244, 240, 0.92);
       border-bottom: 1px solid #e2dbd0;
@@ -187,7 +183,6 @@
     .nav-toggle.active span:nth-child(2) { opacity: 0; }
     .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    /* ===== TOMBOL KEMBALI ===== */
     .back-wrapper {
       padding: 32px 0 0;
       animation: fadeInUp 0.6s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
@@ -215,7 +210,6 @@
     .back-link i { transition: transform 0.2s; }
     .back-link:hover i { transform: translateX(-4px); }
 
-    /* ===== PAGE HEADER ===== */
     .page-header {
       padding: 32px 0 32px;
       border-bottom: 1px solid var(--line);
@@ -264,7 +258,6 @@
       margin: 0 auto;
     }
 
-    /* ===== MAIN SECTION (KARTU DI TENGAH) ===== */
     .main-section {
       flex: 1;
       display: flex;
@@ -295,7 +288,6 @@
       transform: translateY(-4px);
     }
 
-    /* Lingkaran Ikon Biru Muda */
     .icon-circle {
       width: 96px;
       height: 96px;
@@ -324,7 +316,6 @@
       transform: translateX(4px);
     }
 
-    /* Judul INTERNAL */
     .option-card h3 {
       font-family: 'Inter', sans-serif;
       font-size: 26px;
@@ -335,7 +326,6 @@
       text-transform: uppercase;
     }
 
-    /* Deskripsi */
     .option-card p {
       color: var(--ink-soft);
       font-size: 16px;
@@ -344,7 +334,6 @@
       max-width: 320px;
     }
 
-    /* Tombol Pilih Internal */
     .btn-option {
       display: inline-flex;
       align-items: center;
@@ -378,44 +367,22 @@
 
     .btn-option:hover i.fa-arrow-right { transform: translateX(6px); }
 
-    /* ===== FOOTER ===== */
-    footer {
-      border-top: 1px solid #e2dbd0;
-      padding: 36px 0;
-      background: #fcfaf7;
-      margin-top: auto;
-      animation: fadeInUp 0.8s cubic-bezier(0.2, 0.9, 0.3, 1) 0.6s forwards;
-      opacity: 0;
-    }
+    /* ===== FOOTER (SESUAI INDEX.HTML) ===== */
+    footer { border-top: 1px solid #e2dbd0; padding: 44px 0 32px; background: #fcfaf7; margin-top: auto; }
+    .footer-inner { display: flex; flex-direction: column; gap: 20px; }
+    .footer-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-brand { font-family: 'Newsreader', serif; font-size: 18px; font-weight: 600; color: #0f1a24; }
+    .footer-address { font-size: 14px; color: #4a5a68; line-height: 1.6; text-align: right; max-width: 600px; }
+    .footer-address a { color: #2a4b3a; font-weight: 500; transition: color 0.15s; }
+    .footer-address a:hover { color: #a73b2e; }
+    .footer-bottom { border-top: 1px solid #d6cec0; padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 14px; color: #4a5a68; }
 
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 14px;
-      color: var(--ink-soft);
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .footer-content strong {
-      color: var(--ink);
-      font-family: 'Newsreader', serif;
-      font-size: 16px;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    .footer-content strong:hover { color: var(--ledger); }
-
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 860px) {
       .container, .container-narrow { padding: 0 24px; }
       .page-header h2 { font-size: 30px; }
       .nav-content { height: 68px; }
       .logo-text span { display: none; }
       .option-card { padding: 48px 32px; }
-
       .nav-toggle { display: flex; }
       .nav-links {
         position: absolute;
@@ -438,6 +405,12 @@
       .nav-links a::after { display: none; }
     }
 
+    @media (max-width: 680px) {
+      .footer-row { flex-direction: column; align-items: flex-start; }
+      .footer-address { text-align: left; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+
     @media (max-width: 480px) {
       .container, .container-narrow { padding: 0 18px; }
       .page-header { padding: 24px 0 24px; }
@@ -449,20 +422,19 @@
       .option-card h3 { font-size: 22px; }
       .option-card p { font-size: 15px; margin-bottom: 28px; }
       .btn-option { width: 100%; font-size: 15px; padding: 14px 20px; }
-      .footer-content { flex-direction: column; align-items: flex-start; gap: 8px; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ===== NAVBAR (SAMA PERSIS DENGAN index.html) ===== -->
+  <!-- ===== NAVBAR ===== -->
   <header class="navbar">
     <div class="container nav-content">
       <a href="index.html" class="logo">
-        <img class="logo-seal" src="assets/img/logoAS.png" alt="Logo SAKTi" />
+        <img class="logo-seal" src="assets/img/logoAS.png" alt="Logo SEPAKAT" />
         <div class="logo-text">
-          <h1>SAKTi</h1>
+          <h1>SEPAKAT</h1>
           <span>Sistem Pengawasan Kearsipan Terintegrasi</span>
         </div>
       </a>
@@ -482,7 +454,7 @@
     <!-- ===== TOMBOL KEMBALI ===== -->
     <div class="container-narrow back-wrapper">
       <a href="lembaga.html" class="back-link">
-        <i class="fas fa-arrow-left"></i> Kembali ke Lembaga Kearsipan
+        <i class="fas fa-arrow-left"></i> Kembali ke Perangkat Daerah
       </a>
     </div>
 
@@ -527,23 +499,23 @@
 
   <!-- ===== FOOTER ===== -->
   <footer>
-  <div class="container footer-inner">
-    <div class="footer-row">
-      <div>
-        <span class="footer-brand">SEPAKAT</span>
-        <span style="color:#4a5a68; margin-left:8px;">— Sistem Pengawasan Kearsipan Terintegrasi</span>
+    <div class="container footer-inner">
+      <div class="footer-row">
+        <div>
+          <span class="footer-brand">SEPAKAT</span>
+          <span style="color:#4a5a68; margin-left:8px;">— Sistem Pengawasan Kearsipan Terintegrasi</span>
+        </div>
+        <div class="footer-address">
+          Dinas Perpustakaan dan Kearsipan Kabupaten Bantul<br />
+          Alamat: Komplek Perkantoran Terpadu Pemkab Bantul, Jalan Lingkar Timur (Manding), Trirenggo, Kapanewon Bantul, Kabupaten Bantul, DIY 55714
+        </div>
       </div>
-      <div class="footer-address">
-        Dinas Perpustakaan dan Kearsipan Kabupaten Bantul<br />
-        Alamat: Komplek Perkantoran Terpadu Pemkab Bantul, Jalan Lingkar Timur (Manding), Trirenggo, Kapanewon Bantul, Kabupaten Bantul, DIY 55714
+      <div class="footer-bottom">
+        <div>Email: <a href="mailto:dpk@bantulkab.go.id">dpk@bantulkab.go.id</a></div>
+        <div>© 2026 SEPAKAT</div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div>Email: <a href="mailto:dpk@bantulkab.go.id">dpk@bantulkab.go.id</a></div>
-      <div>© 2026 SEPAKAT</div>
-    </div>
-  </div>
-</footer>
+  </footer>
 
   <!-- ===== HAMBURGER MENU SCRIPT ===== -->
   <script>
