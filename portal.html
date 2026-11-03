@@ -148,16 +148,19 @@
       height: 100% !important;
     }
 
-    footer { border-top: 1px solid #e2dbd0; padding: 44px 0 32px; background: #fcfaf7; }
+    /* ===== FOOTER (SESUAI INDEX.HTML) ===== */
+    footer { border-top: 1px solid #e2dbd0; padding: 44px 0 32px; background: #fcfaf7; margin-top: auto; }
     .footer-inner { display: flex; flex-direction: column; gap: 20px; }
     .footer-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
     .footer-brand { font-family: 'Newsreader', serif; font-size: 18px; font-weight: 600; color: #0f1a24; }
-    .footer-address { font-size: 14px; color: #4a5a68; line-height: 1.6; }
+    .footer-address { font-size: 14px; color: #4a5a68; line-height: 1.6; text-align: right; max-width: 600px; }
     .footer-address a { color: #2a4b3a; font-weight: 500; transition: color 0.15s; }
     .footer-address a:hover { color: #a73b2e; }
     .footer-bottom { border-top: 1px solid #d6cec0; padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 14px; color: #4a5a68; }
+    
     @media (max-width: 680px) {
       .footer-row { flex-direction: column; align-items: flex-start; }
+      .footer-address { text-align: left; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
     }
 
@@ -236,23 +239,23 @@
   </main>
 
   <footer>
-  <div class="container footer-inner">
-    <div class="footer-row">
-      <div>
-        <span class="footer-brand">SEPAKAT</span>
-        <span style="color:#4a5a68; margin-left:8px;">— Sistem Pengawasan Kearsipan Terintegrasi</span>
+    <div class="container footer-inner">
+      <div class="footer-row">
+        <div>
+          <span class="footer-brand">SEPAKAT</span>
+          <span style="color:#4a5a68; margin-left:8px;">— Sistem Pengawasan Kearsipan Terintegrasi</span>
+        </div>
+        <div class="footer-address">
+          Dinas Perpustakaan dan Kearsipan Kabupaten Bantul<br />
+          Alamat: Komplek Perkantoran Terpadu Pemkab Bantul, Jalan Lingkar Timur (Manding), Trirenggo, Kapanewon Bantul, Kabupaten Bantul, DIY 55714
+        </div>
       </div>
-      <div class="footer-address">
-        Dinas Perpustakaan dan Kearsipan Kabupaten Bantul<br />
-        Alamat: Komplek Perkantoran Terpadu Pemkab Bantul, Jalan Lingkar Timur (Manding), Trirenggo, Kapanewon Bantul, Kabupaten Bantul, DIY 55714
+      <div class="footer-bottom">
+        <div>Email: <a href="mailto:dpk@bantulkab.go.id">dpk@bantulkab.go.id</a></div>
+        <div>© 2026 SEPAKAT</div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div>Email: <a href="mailto:dpk@bantulkab.go.id">dpk@bantulkab.go.id</a></div>
-      <div>© 2026 SEPAKAT</div>
-    </div>
-  </div>
-</footer>
+  </footer>
 
   <script>
     const API_URL = 'https://script.google.com/macros/s/AKfycbyskcCYiT8QS3KbOQYpfHUsZ4RsfEnUrDh1os8U1m1C9gmXsMaNtrb98sJRFDxvjNgsOw/exec';
