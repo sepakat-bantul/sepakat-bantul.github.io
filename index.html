@@ -209,6 +209,31 @@
       height: 100% !important;
     }
 
+    /* ===== TOMBOL DAFTAR AKSES (BARU) ===== */
+    .daftar-akses-wrap { text-align: center; margin-top: 56px; }
+    .daftar-akses-wrap p { color: #4a5a68; font-size: 15px; margin-bottom: 16px; }
+    .btn-daftar {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 32px;
+      background: #2a4b3a;
+      color: #f2efe7;
+      font-weight: 600;
+      font-size: 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 12px rgba(42, 75, 58, 0.2);
+    }
+    .btn-daftar:hover {
+      background: #1a3326;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(42, 75, 58, 0.25);
+    }
+
     @media (max-width: 860px) {
       .card-grid { grid-template-columns: 1fr; }
       .section-heading h2 { font-size: 30px; }
@@ -322,6 +347,17 @@
           </div>
 
         </div>
+
+        <!-- ===== TOMBOL DAFTAR AKSES (BARU) ===== -->
+        <div class="daftar-akses-wrap">
+          <p>Belum memiliki akses sistem?</p>
+          <a href="#" id="btnDaftarAkses" class="btn-daftar" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M11 14v-1.5A3.5 3.5 0 0 0 7.5 9h-3A3.5 3.5 0 0 0 1 12.5V14M6 6.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM13 5v4M15 7h-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Daftarkan Akses
+          </a>
+        </div>
       </div>
     </section>
   </main>
@@ -359,6 +395,24 @@
     function hideAlert() {
       alertPengawas.className = 'alert-portal';
     }
+
+    // ===== MUAT LINK FORM PENDAFTARAN (BARU) =====
+    async function loadLinkPendaftaran() {
+      try {
+        const res = await fetch(API_URL + '?action=config');
+        const config = await res.json();
+        if (config && config.LINK_FORM_PENDAFTARAN) {
+          const btn = document.getElementById('btnDaftarAkses');
+          if (btn) {
+            btn.href = config.LINK_FORM_PENDAFTARAN;
+            btn.style.display = 'inline-flex';
+          }
+        }
+      } catch (err) {
+        console.error('Gagal memuat link form pendaftaran:', err);
+      }
+    }
+    loadLinkPendaftaran();
 
     window.handleCredentialResponse = async function(response) {
       hideAlert();
